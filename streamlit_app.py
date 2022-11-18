@@ -1,8 +1,10 @@
+# -*- coding: utf-8 -*-
 import streamlit as st
 import pandas as pd
-import numpy as np
 import warnings
 from txtai.embeddings import Embeddings
+
+warnings.simplefilter(action='ignore', category=FutureWarning)
 
 warnings.simplefilter(action='ignore', category=FutureWarning)
 
@@ -10,9 +12,7 @@ st.set_page_config(page_title="Text Module Search Engine", page_icon="search", l
 
 st.title('Text Module Search')
 
-key=st.text_input(label='Enter Keyword')
 
-submit_button = st.button('Search')
 #--------------------------------------------------------------------------
 
 data=pd.read_excel(r"data.xlsx")
@@ -21,6 +21,16 @@ embeddings = Embeddings({
     
     "path": "T-Systems-onsite/german-roberta-sentence-transformer-v2"
 })
+
+# embeddings = Embeddings({
+#     "path": "german-roberta-sentence-transformer-v2"
+# })
+
+
+key=st.text_input(label='Enter Keyword')
+
+submit_button = st.button('Search')
+
 
 embeddings.load("models")
 
@@ -46,7 +56,7 @@ if(submit_button):
         st.write(data['Title'][i[0]])
         st.write(txtai_data[i[0]][1])
         st.write(" ")
-
+  
 st.write('')
 st.write('')
 st.write('')

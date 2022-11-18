@@ -1,4 +1,8 @@
+pycaret
 streamlit
+fastapi
+uvicorn
+pandas
 txtai
-openpyxl
 sentencepiece
+openpyxl
