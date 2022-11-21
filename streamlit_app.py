@@ -17,10 +17,12 @@ st.title('Text Module Search')
 
 data=pd.read_excel(r"data.xlsx")
 
-embeddings = Embeddings({
+# embeddings = Embeddings({
     
-    "path": "T-Systems-onsite/german-roberta-sentence-transformer-v2"
-})
+#     "path": "T-Systems-onsite/german-roberta-sentence-transformer-v2"
+# })
+
+embeddings = Embeddings({"path": "T-Systems-onsite/bert-german-dbmdz-uncased-sentence-stsb"})
 
 # embeddings = Embeddings({
 #     "path": "german-roberta-sentence-transformer-v2"
