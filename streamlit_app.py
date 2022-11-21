@@ -12,6 +12,9 @@ st.set_page_config(page_title="Text Module Search Engine", page_icon="search", l
 
 st.title('Text Module Search')
 
+key=st.text_input(label='Enter Keyword')
+
+submit_button = st.button('Search')
 
 #--------------------------------------------------------------------------
 
@@ -29,9 +32,6 @@ embeddings = Embeddings({"path": "T-Systems-onsite/bert-german-dbmdz-uncased-sen
 # })
 
 
-key=st.text_input(label='Enter Keyword')
-
-submit_button = st.button('Search')
 
 
 embeddings.load("models")
