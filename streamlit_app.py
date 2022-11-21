@@ -19,7 +19,14 @@ submit_button = st.button('Search')
 #--------------------------------------------------------------------------
 
 data=pd.read_excel(r"data.xlsx")
-embeddings = Embeddings({"path": "T-Systems-onsite/bert-german-dbmdz-uncased-sentence-stsb"})
+# embeddings = Embeddings({"path": "T-Systems-onsite/bert-german-dbmdz-uncased-sentence-stsb"})
+
+@st.cache(allow_output_mutation=True)
+def load_model():
+    embeddings = Embeddings({"path": "T-Systems-onsite/bert-german-dbmdz-uncased-sentence-stsb"})
+    return(embeddings)
+
+embeddings = load_model()
 
 embeddings.load("models")
 
