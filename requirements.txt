@@ -1,7 +1,4 @@
-pycaret
 streamlit
-fastapi
-uvicorn
 pandas
 txtai
 sentencepiece
