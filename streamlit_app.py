@@ -19,20 +19,7 @@ submit_button = st.button('Search')
 #--------------------------------------------------------------------------
 
 data=pd.read_excel(r"data.xlsx")
-
-# embeddings = Embeddings({
-    
-#     "path": "T-Systems-onsite/german-roberta-sentence-transformer-v2"
-# })
-
 embeddings = Embeddings({"path": "T-Systems-onsite/bert-german-dbmdz-uncased-sentence-stsb"})
-
-# embeddings = Embeddings({
-#     "path": "german-roberta-sentence-transformer-v2"
-# })
-
-
-
 
 embeddings.load("models")
 
